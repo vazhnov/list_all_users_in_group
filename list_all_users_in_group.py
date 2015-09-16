@@ -10,7 +10,9 @@ def list_all_users_in_group(groupname):
     """Get list of all users of group.
 
     Get sorted list of all users of group GROUP,
-    including users with main group GROUP."""
+    including users with main group GROUP.
+    Origin in https://github.com/vazhnov/list_all_users_in_group"""
+
     group = grp.getgrnam(groupname)
     group_all_users_set = set(group.gr_mem)
     for user in pwd.getpwall():
