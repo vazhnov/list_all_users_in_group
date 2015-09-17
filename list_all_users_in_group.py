@@ -3,8 +3,8 @@
 
 import grp
 import pwd
-import sys
 import inspect
+import argparse
 
 
 def list_all_users_in_group(groupname):
@@ -27,10 +27,11 @@ def list_all_users_in_group(groupname):
     return sorted(group_all_users_set)
 
 if __name__ == "__main__":
-    if len(sys.argv) == 2:
-        result = list_all_users_in_group(sys.argv[1])
-        if result:
-            print ('\n'.join(result))
-    else:
-        print(inspect.cleandoc(list_all_users_in_group.__doc__))
-        sys.exit('\nUsage: {} groupname'.format(sys.argv[0]))
+    parser = argparse.ArgumentParser(description=inspect.cleandoc(list_all_users_in_group.__doc__),
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument('-d', '--delimiter', default='\n', help='Use DELIMITER instead of newline for users delimiter')
+    parser.add_argument('groupname', help='Group name')
+    args = parser.parse_args()
+    result = list_all_users_in_group(args.groupname)
+    if result:
+        print (args.delimiter.join(result))
