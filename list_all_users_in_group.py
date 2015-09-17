@@ -17,7 +17,7 @@ def list_all_users_in_group(groupname):
         group = grp.getgrnam(groupname)
     # On error "KeyError: 'getgrnam(): name not found: GROUP'"
     except (KeyError):
-        return set()
+        return None
     group_all_users_set = set(group.gr_mem)
     for user in pwd.getpwall():
         if user.pw_gid == group.gr_gid:
@@ -26,7 +26,9 @@ def list_all_users_in_group(groupname):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        print (' '.join(list_all_users_in_group(sys.argv[1])))
+        result = list_all_users_in_group(sys.argv[1])
+        if result:
+            print ('\n'.join(result))
     else:
         print(list_all_users_in_group.__doc__)
         sys.exit('Usage: {} groupname'.format(sys.argv[0]))
