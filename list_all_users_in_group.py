@@ -13,7 +13,11 @@ def list_all_users_in_group(groupname):
     including users with main group GROUP.
     Origin in https://github.com/vazhnov/list_all_users_in_group"""
 
-    group = grp.getgrnam(groupname)
+    try:
+        group = grp.getgrnam(groupname)
+    # On error "KeyError: 'getgrnam(): name not found: GROUP'"
+    except (KeyError):
+        return set()
     group_all_users_set = set(group.gr_mem)
     for user in pwd.getpwall():
         if user.pw_gid == group.gr_gid:
