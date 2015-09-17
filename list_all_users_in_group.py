@@ -4,6 +4,7 @@
 import grp
 import pwd
 import sys
+import inspect
 
 
 def list_all_users_in_group(groupname):
@@ -11,8 +12,9 @@ def list_all_users_in_group(groupname):
 
     Get sorted list of all users of group GROUP,
     including users with main group GROUP.
-    Origin in https://github.com/vazhnov/list_all_users_in_group"""
+    Origin in https://github.com/vazhnov/list_all_users_in_group
 
+    """
     try:
         group = grp.getgrnam(groupname)
     # On error "KeyError: 'getgrnam(): name not found: GROUP'"
@@ -30,5 +32,5 @@ if __name__ == "__main__":
         if result:
             print ('\n'.join(result))
     else:
-        print(list_all_users_in_group.__doc__)
-        sys.exit('Usage: {} groupname'.format(sys.argv[0]))
+        print(inspect.cleandoc(list_all_users_in_group.__doc__))
+        sys.exit('\nUsage: {} groupname'.format(sys.argv[0]))
