@@ -38,7 +38,7 @@ def main():
     args = parser.parse_args()
     result = list_all_users_in_group(args.groupname)
     if result:
-        print (args.delimiter.join(result))
+        print(args.delimiter.join(result))
 
 
 if __name__ == "__main__":
