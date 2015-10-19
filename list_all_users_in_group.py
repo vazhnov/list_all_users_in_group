@@ -1,6 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# pylint: disable=line-too-long,missing-docstring
+
 from __future__ import print_function
 import grp
 import pwd
