@@ -27,7 +27,8 @@ def list_all_users_in_group(groupname):
             group_all_users_set.add(user.pw_name)
     return sorted(group_all_users_set)
 
-if __name__ == "__main__":
+
+def main():
     parser = argparse.ArgumentParser(description=inspect.getdoc(list_all_users_in_group),
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-d', '--delimiter', default='\n', help='Use DELIMITER instead of newline for users delimiter')
@@ -36,3 +37,7 @@ if __name__ == "__main__":
     result = list_all_users_in_group(args.groupname)
     if result:
         print (args.delimiter.join(result))
+
+
+if __name__ == "__main__":
+    main()
