@@ -1,6 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from __future__ import print_function
 import grp
 import pwd
 import inspect
@@ -18,7 +19,7 @@ def list_all_users_in_group(groupname):
     try:
         group = grp.getgrnam(groupname)
     # On error "KeyError: 'getgrnam(): name not found: GROUP'"
-    except (KeyError):
+    except KeyError:
         return None
     group_all_users_set = set(group.gr_mem)
     for user in pwd.getpwall():
