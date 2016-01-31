@@ -1,6 +1,12 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""Return sorted list of all users of group GROUP
+
+Script 'list_all_users_in_group' return sorted list of all users of group GROUP
+Origin sources is in https://github.com/vazhnov/list_all_users_in_group
+"""
+
 # pylint: disable=line-too-long,missing-docstring
 
 from __future__ import print_function
@@ -15,7 +21,6 @@ def list_all_users_in_group(groupname):
 
     Get sorted list of all users of group GROUP,
     including users with main group GROUP.
-    Origin in https://github.com/vazhnov/list_all_users_in_group
 
     """
     try:
