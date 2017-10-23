@@ -4,10 +4,12 @@
 """Return sorted list of all users of group GROUP
 
 Script 'list_all_users_in_group' return sorted list of all users of group GROUP
+
+License: CC0 1.0 Universal or newer.
 Origin sources is in https://github.com/vazhnov/list_all_users_in_group
 """
 
-# pylint: disable=line-too-long,missing-docstring
+# pylint: disable=line-too-long
 
 from __future__ import print_function
 import grp
