@@ -14,9 +14,7 @@ Origin sources is in https://github.com/vazhnov/list_all_users_in_group
 from __future__ import print_function
 import grp
 import pwd
-import inspect
 import argparse
-import sys
 
 
 def list_all_users_in_group(groupname):
@@ -39,7 +37,7 @@ def list_all_users_in_group(groupname):
 
 
 def main():
-    parser = argparse.ArgumentParser(description=inspect.getdoc(sys.modules[__name__]),
+    parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('-d', '--delimiter', default='\n', help='Use DELIMITER instead of newline for users delimiter')
     parser.add_argument('groupname', help='Group name')
