@@ -9,3 +9,7 @@ Simple python script, that get list of all users of group.
 ## Similar programms
 
 * C++ programm `members`, in Debian/Ubuntu you can install package [members](https://tracker.debian.org/pkg/members);
+
+## Copyright
+
+Distrubuted under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) license.
