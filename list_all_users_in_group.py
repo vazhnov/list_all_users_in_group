@@ -11,7 +11,6 @@ Origin sources is in https://github.com/vazhnov/list_all_users_in_group
 
 # pylint: disable=line-too-long
 
-from __future__ import print_function
 import grp
 import pwd
 import argparse
