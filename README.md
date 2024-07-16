@@ -1,6 +1,8 @@
 # list\_all\_users\_in\_group.py
 
-Simple python script, that get list of all users of group.
+Simple python script, gets the list of all users of group.
+
+It was made just for fun, with a focus on fixing warnings from different Python linters.
 
 ## Sources
 
